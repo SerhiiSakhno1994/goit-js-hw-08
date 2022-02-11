@@ -4,7 +4,13 @@ const form = document.querySelector('.feedback-form');
 const email = document.querySelector('input[name = email]');
 const textarea = document.querySelector('textarea[name = message]');
 
-const data = JSON.parse(localStorage.getItem('feedback-form-state')) ?? { email: '', message: '' };
+const data =(JSON.parse(localStorage.getItem('feedback-form-state')) !== null && JSON.parse(localStorage.getItem('feedback-form-state')) !== undefined)
+  ? JSON.parse(localStorage.getItem('feedback-form-state')) : { email: '', message: '' };
+  
+  
+
+
+
 email.value = data.email;
 textarea.value = data.message;
 
